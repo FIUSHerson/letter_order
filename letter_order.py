@@ -12,7 +12,7 @@ def main():
 
     # Then perform the algorithm
     print("\nPerforming calculations...\n")
-    all_combinations: [str] = get_all_word_bits(word_to_work_on)
+    all_combinations: list[str] = get_all_word_bits(word_to_work_on)
     print("\nFinished calculations! Here are the sorted results...\n")
 
     all_combinations.sort()
@@ -25,7 +25,7 @@ def main():
         print(converted_to_string)
 
 
-def get_all_word_bits(word: str = "", char_array: [str]=[], index_to_start_with: int=0, all_possible_combinations: [str]=[], is_internal=False, recursion_depth=1) -> [str]:
+def get_all_word_bits(word: str = "", char_array: list[str]=[], index_to_start_with: int=0, all_possible_combinations: list[str]=[], is_internal=False, recursion_depth=1) -> list[str]:
     
     # Begin timer
     start_time = timeit.default_timer()
@@ -86,8 +86,8 @@ def get_all_word_bits(word: str = "", char_array: [str]=[], index_to_start_with:
     return all_possible_combinations
 
 
-def convert_string_to_char_array(source: str) -> [str]:
-    final_array: [char] = []
+def convert_string_to_char_array(source: str) -> list[str]:
+    final_array: list[chr] = []
 
     for character in source:
         final_array.append(character)
@@ -95,7 +95,7 @@ def convert_string_to_char_array(source: str) -> [str]:
     return final_array
 
 
-def convert_char_array_to_string(source: [str]) -> str:
+def convert_char_array_to_string(source: list[str]) -> str:
     final_string: str = ""
     
     for item in source:
