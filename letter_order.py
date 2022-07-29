@@ -38,7 +38,8 @@ def get_all_word_bits(word: str = "", char_array: list[str]=[], index_to_start_w
     elif is_internal and len(char_array) == 1:
         if (char_array not in all_possible_combinations) and is_word(convert_char_array_to_string(char_array)):
             print(convert_char_array_to_string(char_array))
-            all_possible_combinations.append(char_array)
+            for character in char_array:
+                all_possible_combinations.append(character)
         
         # end timer
         end_time = timeit.default_timer()
@@ -58,7 +59,8 @@ def get_all_word_bits(word: str = "", char_array: list[str]=[], index_to_start_w
 
         if (char_array not in all_possible_combinations) and is_word(convert_char_array_to_string(char_array)):
             print(convert_char_array_to_string(char_array))
-            all_possible_combinations.append(char_array)
+            for character in char_array:
+                all_possible_combinations.append(character)
         
         for index, character in enumerate(char_array):
 
@@ -87,7 +89,7 @@ def get_all_word_bits(word: str = "", char_array: list[str]=[], index_to_start_w
 
 
 def convert_string_to_char_array(source: str) -> list[str]:
-    final_array: list[chr] = []
+    final_array: list[str] = []
 
     for character in source:
         final_array.append(character)
